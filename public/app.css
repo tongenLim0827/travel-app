@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffd1bd;
+}
+
+.brand-name {
+    color: rgb(95, 55, 55); /* Set your desired text color */
+    text-decoration: none; /* Remove the default underline */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.element {
+    color: rgb(95, 55, 55); /* Set your desired text color */
+    text-decoration: none; /* Remove the default underline */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    padding: 10px;
+    margin-left: 160px;
+}
+
+.header-top {
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    color: rgb(95, 55, 55);
+    box-shadow: 0px 20px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+.header-top img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.header-top h5 {
+    display: inline-block;
+    margin-left: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-bottom{
+    background-color: white;
+    color: 333;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    background-color: #ffd1bd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.intro-section {
+    background-color: #ffd1bd;
+    margin: auto;
+    font-size: 28px;
+    max-width: 380px;
+    font-family: 'Playfair Display', serif;
+    color: black;
+}
+
+.account-details {
+    width: 400px;
+    margin: auto;
+    background-color: rgb(248, 241, 241);
+    padding: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 16px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.btn-primary {
+    font-size: 12px;
+    color: black;
+    margin-left: auto;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.login-button,
+.signup-button,
+.register-button,
+.logout-button,
+.update-button {
+    width: 48%;
+    color: white;
+    background-color: rgba(255, 151, 99, 0.88);
+    border-color: rgba(255, 151, 99, 0.88);
+    padding: 10px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+.delete-button {
+    width: 48%;
+    color: white;
+    background-color: rgba(255, 85, 0, 0.88);
+    border-color: rgba(255, 85, 0, 0.88);
+    padding: 10px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+.main-title {
+    text-align: center;
+    background-color: rgb(248, 241, 241);
+    width: 90%;
+}
+
+.slogan-title {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(95, 55, 55);
+}
+
+.cards {
+    width: 250px;
+    height: 350px;
+    background-color: rgb(170, 146, 146);
+    margin: 20px;
+}
+
+.cards-container {
+    display: flex; /* Add this to make child elements flex items */
+    justify-content: center; /* Center the items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+}
+
+.wrapper {
+    max-width: 65%;
+    margin: auto;
+}
+
+.wrapper > h1 {
+    margin: 1.5rem 0;
+    text-align: center;
+    color: rgb(95, 55, 55);
+}
+
+.faq-ques,
+.card-title {
+    background-color: rgb(248, 241, 241);
+    color: black;
+    font-size: 1.4rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.faq-ans,
+.card-content {
+    padding: 0.5rem 2rem 0.5rem 2.5rem;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: black;
+    background-color: rgb(248, 241, 241);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.centre-card {
+    border: 1px solid black;
+    margin: 40px 0;
+}
+
+
