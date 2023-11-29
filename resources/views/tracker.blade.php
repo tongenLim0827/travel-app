@@ -7,6 +7,7 @@
         <a class="btn btn-primary" href="/">Back</a>
         <h1 style="text-align: center; text-xl font-semibold text-gray-900 dark:text-white"> New Trip </h1>
         <form method="POST" action="{{ route('tracker.store') }}">
+            <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
             @csrf
             <div class="form-group flex" >
                 <label for="name"> Trip Name:</label>

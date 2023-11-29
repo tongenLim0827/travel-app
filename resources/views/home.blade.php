@@ -11,7 +11,7 @@
 
         <div class="account-details">
             @auth
-                <h1 style="justify-content: center; margin-left: 100px;"> Welcome, {{  auth()->user()->name }}! </h1>
+                <h1 style="justify-content: center; margin-left: 50px;"> Welcome Back, {{  auth()->user()->name }}! </h1>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit" class="logout-button">Log Out</button>

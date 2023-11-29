@@ -20,7 +20,7 @@ class TripController extends Controller
         $data = $request->validate([
             'name'=>'required | max:255',
             'description'=>'nullable',
-            'people'=>'nullable'
+            'people'=>'nullable',
         ]);
 
         // create a new trip
@@ -40,13 +40,16 @@ class TripController extends Controller
         return redirect('/tracker');
     }
 
+    // NOT WORKING SIAAAAA
     public function edit(Trip $trip, Request $request)
     {
-        $data = $request->validate([
-            'name'=>'required | max:255',
+        $request->validate([
+            'name'=>'required|max:255',
             'description'=>'nullable',
             'people'=>'nullable'
         ]);
+
+        $data = $request->only(['name', 'description', 'people']);
 
         // update trip details
         $trip->update($data);
