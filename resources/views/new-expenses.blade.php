@@ -13,18 +13,18 @@
             </div>
             <br>
             <div class="form-group flex">
-                <label for="email">Category:</label>
-                <input type="email" id="email" name="email" required>
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category" required>
             </div>
             <br>
             <div class="form-group flex">
-                <label for="password">Description:</label>
-                <input type="password" id="password" name="password" required>
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" required>
             </div>
             <br>
             <div class="form-group">
-                <label for="password_confirmation">Amount:</label>
-                <input type="password" id="password_confirmation" name="password_confirmation" required>
+                <label for="amount">Amount:</label>
+                <input type="text" id="amount" name="amount" required>
             </div>
             <br>
             <button type="submit" class="add-button">Add</button>

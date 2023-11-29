@@ -2,7 +2,7 @@
 
 <title> WeShare </title>
 <link rel="stylesheet" href="/app.css">
-<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
+<link rel="stylesheet" href="../bootstrap">
 
 <!-- Navigation bar (sit on top) -->
 <div class="header-top">

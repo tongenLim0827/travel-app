@@ -83,6 +83,13 @@ body {
     padding: 40px;
 }
 
+.display-container {
+    width: 1000px;
+    margin: auto;
+    background-color: rgb(248, 241, 241);
+    padding: 100px;
+}
+
 .form-group {
     margin-bottom: 20px;
 }
@@ -119,7 +126,9 @@ input {
 .signup-button,
 .register-button,
 .logout-button,
-.update-button {
+.update-button,
+.view-button,
+.delete-button {
     width: 48%;
     color: white;
     background-color: rgba(255, 151, 99, 0.88);
@@ -127,6 +136,18 @@ input {
     padding: 10px;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
     margin: auto;
+}
+
+.add-button {
+    width: 50px;
+    color: white;
+    background-color: rgba(255, 151, 99, 0.88);
+    border-color: rgba(255, 151, 99, 0.88);
+    padding: 10px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    /* position: absolute; */
+    bottom: 10px; /* Adjust the distance from the bottom */
+    right: 10px;
 }
 
 .delete-button {
@@ -203,5 +224,4 @@ input {
     border: 1px solid black;
     margin: 40px 0;
 }
-
 
