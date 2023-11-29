@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ExpenseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,10 +41,9 @@ Route::get('/tracker', [TripController::class, 'create'])->name('tracker.create'
 Route::post('/tracker', [TripController::class, 'store'])->name('tracker.store');
 Route::get('/tracker/{trip}/details', [TripController::class, 'view'])->name('tracker.view');
 Route::delete('/tracker/{trip}/delete', [TripController::class, 'delete'])->name('tracker.delete');
-Route::put('/tracker', [TripController::class, 'edit'])->name('tracker.edit'); //edit trip details
-
-Route::get('/trip/{trip}/create-expenses', [ExpenseController::class, 'create'])->name('expense.create');
-Route::post('/trip/{trip}/create-expenses', [ExpenseController::class, 'store'])->name('expense.store');
+Route::put('/tracker/{trip}/details', [TripController::class, 'edit'])->name('tracker.edit'); //edit trip details >> not working :(
+Route::get('/tracker/trip/{trip}/create-expenses', [ExpenseController::class, 'create'])->name('expense.create');
+Route::post('/tracker/trip/{trip}/create-expenses', [ExpenseController::class, 'store'])->name('expense.store');
 
 // transfer
 Route::get('/transfer', function () { return view('transfer');});
@@ -51,8 +51,7 @@ Route::get('/transfer', function () { return view('transfer');});
 // FAQ
 Route::get('/frequently-asked-questions', function () { return view('faq'); });
 
-// profile (TO-DO)
+// profile
 Route::get('/user-profile', [UserController::class, 'create']);
-Route::delete('/delete-user', [UserController::class, 'destroy'])->name('delete-user');
-Route::put('/update-user/{user}', [UserController::class, 'update'])->name('update-user');
-
+Route::delete('/delete-user/{user}', [UserController::class, 'destroy'])->name('delete-user');
+// Route::put('/update-user', [UserController::class, 'update'])->name('update-user');

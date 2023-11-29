@@ -28,18 +28,12 @@
     </div>
 
     <br>
-
+    <!-- Trip History -->
     <div class="display-container">
-        <h1 style="text-align: center;">Trip History</h1>
+        <p style="text-align: center; font-size:36px; font-weight: 25px;"><u>Trip History</u></p>
         <div>
             <table class="table-form" style="width: 100%; table-layout: fixed; ">
                 <thead>
-                    <colgroup>
-                        <col style="width: 20%;" /> <!-- 25% for each column -->
-                        <col style="width: 25%;" />
-                        <col style="width: 25%;" />
-                        <col style="width: 30%;" />
-                    </colgroup>
                     <tr>
                         <th>Trip Name</th>
                         <th>Trip Description</th>
@@ -54,18 +48,23 @@
                             <td>{{ $trip->description }}</td>
                             <td>{{ $trip->people }}</td>
                             <td>
-                                <a href="{{ route('tracker.view', ['trip' => $trip] )}}" class="display-inline">
-                                    <button type="button" class="view-button">View</button>
-                                </a>
+                                <div style="display: flex; /* Add this to make child elements flex items */
+                                justify-content: center; /* Center the items horizontally */
+                                flex-wrap: wrap;">
+                                    <a href="{{ route('tracker.view', ['trip' => $trip] )}}" class="display-inline">
+                                        <button type="button" class="view-button">View</button>
+                                    </a>
 
-                                {{-- <a href="{{ route('tracker.delete', ['trip' => $trip])}}">
-                                    <button type="button" class="delete-button">Delete</button>
-                                </a> --}}
-                                <form method="POST" action="{{ route('tracker.delete', ['trip' => $trip]) }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="delete-button">Delete</button>
-                                </form>
+                                    {{-- <a href="{{ route('tracker.delete', ['trip' => $trip])}}">
+                                        <button type="button" class="delete-button">Delete</button>
+                                    </a> --}}
+
+                                    <form method="POST" action="{{ route('tracker.delete', ['trip' => $trip]) }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="delete-button">Delete</button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                     @endforeach
@@ -73,5 +72,4 @@
             </table>
         </div>
     </div>
-
 @endsection

@@ -3,18 +3,31 @@
 @section('content')
 
     <div class="account-details">
-        <a class="btn btn-primary" href="/">Back</a>
+        <a class="btn btn-primary" href="/tracker/{trip}/details">Back</a>
         <h1 style="text-align: center; text-xl font-semibold text-gray-900 dark:text-white"> New Expenses </h1>
-        <form method="POST" action='register'>
+        <form method="POST" action='{{  route('expense.store') }}'>
             @csrf
-            <div class="form-group flex" >
+            <input type="hidden" name="trip_id" value="{{ $trip->id }}">
+            <div class="form-group flex">
                 <label for="name"> Expenses Name:</label>
                 <input type="text" id="name" name="name" required>
             </div>
             <br>
             <div class="form-group flex">
                 <label for="category">Category:</label>
-                <input type="text" id="category" name="category" required>
+                {{-- <label for="fruit">Select a fruit:</label> --}}
+                    <select id="category" name="category" style="width: 80%; height: 30px; font-size: 16px">
+                        <option value="default"> </option>
+                        <option value="accommodation">Accommodation</option>
+                        <option value="transport">Transport</option>
+                        <option value="food">Food</option>
+                        <option value="beverage">Beverage</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="others">Others</option>
+                        <option value="beverage">Beverage</option>
+                        <option value="data">Data Plan</option>
+                    </select>
+                {{-- <input type="text" id="category" name="category" required> --}}
             </div>
             <br>
             <div class="form-group flex">

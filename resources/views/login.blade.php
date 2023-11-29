@@ -4,7 +4,7 @@
 
     <div class="account-details">
         <a class="btn btn-primary" href="/">Back</a>
-        <h1 style="text-align: center; text-xl font-semibold text-gray-900 dark:text-white">Log In</h1>
+        <h1 style="text-align: center; text-xl font-semibold text-gray-900 dark:text-white">Please log in to continue</h1>
         <form method="POST" action='/login'>
             @csrf
             <div class="form-group flex">

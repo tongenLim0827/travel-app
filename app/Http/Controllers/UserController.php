@@ -7,12 +7,19 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\console;
+use App\Models\Trip;
 
 class UserController extends Controller
 {
     public function create()
     {
         return view('profile');
+    }
+
+    // a user can have multiple trips
+    public function trips()
+    {
+        return $this->hasMany(Trip::class);
     }
 
     public function forgot()
@@ -57,9 +64,10 @@ class UserController extends Controller
         return redirect('/')->with('success', 'Profile updated successfully.');
     }
 
-    public function destroy()
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect('/');
     }
 
     public function reset()
