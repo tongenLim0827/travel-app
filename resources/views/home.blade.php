@@ -35,7 +35,7 @@
                     <br>
                     <button type="submit" class="login-button">LOG IN</button>
                 </form>
-                <a href="/reset-password" style="margin-left: 150px; margin-top: 40px;"> Forgot Password? </a>
+                <a href="/forgot-password" style="margin-left: 150px; margin-top: 40px;"> Forgot Password? </a>
                 <a href="/register" style="margin-left: 150px; margin-top: 40px;"> Create Account </a>
             @endauth
         </div>

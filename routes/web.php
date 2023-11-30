@@ -25,8 +25,11 @@ Route::get('/register', [RegisterController::class, 'create'])->middleware('gues
 Route::post('/register', [RegisterController::class, 'store'])->middleware('guest')->name('register');
 
 // reset password (TO-DO)
-Route::get('/reset-password', [UserController::class, 'forgot'])->name('reset-password');
-Route::put('/reset-password', [UserController::class, 'reset'])->middleware('admin')->name('reset-password');
+Route::get('/forgot-password', [UserController::class, 'forgot'])->middleware('guest')->name('forgot-password');
+Route::post('/forgot-password', [UserController::class, 'send'])->middleware('guest')->name('forgot-password');
+Route::get('/reset-password/{token}', [UserController::class, 'edit'])->name('password.reset');
+Route::post('/reset-password/{token}', [UserController::class, 'reset'])->name('reset-password');
+// Route::get('/reset-password/successful', [UserController::class, 'successful'])->name('reset.successful');
 
 // login, logout
 Route::get('/login', [SessionsController::class, 'create'])->middleware('guest')->name('login');

@@ -8,11 +8,17 @@ use Illuminate\Support\Facades\Auth;
 
 class SessionsController extends Controller
 {
+    /**
+     * Load login blade
+     */
     public function create()
     {
         return view('login');
     }
 
+    /**
+     * Authenticate user
+     */
     public function store(Request $request)
     {
         $credentials = $request->only('email', 'password');
@@ -21,16 +27,23 @@ class SessionsController extends Controller
             // Authentication successful
             $user = Auth::user();
 
-            return redirect('/'); // Redirect back to home page
+            return redirect('/'); // Redirect back to home page, successfully log in
         }
 
-        // Authentication failed
+        // Authentication failed, return with 'invalid credential' message 
         return back()->withErrors(['email' => 'Invalid credentials']);
     }
 
-    public function destroy()
+    /**
+     * Log out the user
+     */
+    public function destroy(Request $request)
     {
         auth()->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
 
         return redirect('/');
     }
