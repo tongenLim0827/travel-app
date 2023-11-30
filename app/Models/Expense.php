@@ -13,6 +13,14 @@ class Expense extends Model
         'name',
         'category',
         'description',
-        'amount'
-      ];
+        'amount',
+        'trip_id'
+    ];
+
+    // each expense belongs to one trip
+    public function trip()
+    {
+        return $this->belongsTo(Trip::class);
+    }
+
 }

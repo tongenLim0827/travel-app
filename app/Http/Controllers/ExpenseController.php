@@ -9,15 +9,16 @@ use App\Models\Trip;
 
 class ExpenseController extends Controller
 {
-    public function create()
+    public function create($trip)
     {
-        return view('new-expenses');
+        // dd($trip);
+        return view('new-expenses', ['trip' => $trip]);
     }
 
     public function store()
     {
         $attributes = request()->validate([
-            // 'trip_id' => 'required|exists:trips,id', // relate to a particular trip
+            'trip_id' => 'required|exists:trips,id', // relate to a particular trip
             'name' => 'required',
             'category' => 'required',
             'description' => 'required | min:7',
@@ -27,12 +28,11 @@ class ExpenseController extends Controller
         $expense = Expense::create($attributes);
 
         return redirect('/tracker/{trip}/details');
+    }
+
+    public function view(Request $request, $trip){
+        return view('expense-details');
 
     }
 
-    // each expense belongs to one trip
-    public function trip()
-    {
-        return $this->belongsTo(Trip::class);
-    }
 }

@@ -36,6 +36,7 @@
                 <a href="/register" style="margin-left: 150px; margin-top: 40px;"> Create Account </a>
             @endauth
         </div>
+    <!-- Intro Section End -->
     </div>
 
     <!-- Benefit Card Content -->
@@ -91,6 +92,7 @@
                 </div>
             </div>
         </div>
+    <!-- Benefit Card Content End -->
     </div>
 
 
@@ -142,6 +144,7 @@
                 </p>
             </div>
         </div>
+    <!-- User review section end -->
     </div>
 
     <!-- End Page Content -->

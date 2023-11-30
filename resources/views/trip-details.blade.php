@@ -26,25 +26,39 @@
     <div class="display-container">
         <h1 style="text-align: center;"><u>Expenses History</u></h1>
         <div>
-            <table class="table-form" style="width: 100%; justify-content: center;">
+            <table class="table-form" style="width: 100%; table-layout: fixed; ">
                 <thead>
                     <tr>
                         <th>Expenses Name</th>
                         <th>Category</th>
                         <th>Expenses Description</th>
                         <th>Amount</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
-                {{-- <tbody>
+                <tbody>
                     @foreach($expenses as $expense)
                         <tr>
                             <td>{{ $expense->name }}</td>
                             <td>{{ $expense->category }}</td>
                             <td>{{ $expense->description }}</td>
                             <td>{{ $expense->amount }}</td>
+                            <td>
+                                <div style="display: flex; justify-content: center; flex-wrap: wrap;">
+                                    <a href="{{ route('expense.view', ['trip' => $trip, 'expense' => $expense] )}}" class="display-inline">
+                                        <button type="button" class="view-button">View</button>
+                                    </a>
+
+                                    <form method="POST" action="{{ route('tracker.delete', ['trip' => $trip]) }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="delete-button">Delete</button>
+                                    </form>
+                                </div>
+                            </td>
                         </tr>
                     @endforeach
-                </tbody> --}}
+                </tbody>
             </table>
 
         </div>

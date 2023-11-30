@@ -42,4 +42,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // a user can have multiple trips
+    public function trips()
+    {
+        return $this->hasMany(Trip::class);
+    }
 }

@@ -12,6 +12,20 @@ class Trip extends Model
     protected $fillable = [
       'name',
       'description',
-      'people'
+      'people',
+      'user_id'
     ];
+
+    // each trip belongs to one user
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    // a trip can have multiple expenses
+    public function expenses()
+    {
+        return $this->hasMany(Expense::class);
+    }
+
 }

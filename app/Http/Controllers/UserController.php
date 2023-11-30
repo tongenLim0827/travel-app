@@ -16,11 +16,6 @@ class UserController extends Controller
         return view('profile');
     }
 
-    // a user can have multiple trips
-    public function trips()
-    {
-        return $this->hasMany(Trip::class);
-    }
 
     public function forgot()
     {
