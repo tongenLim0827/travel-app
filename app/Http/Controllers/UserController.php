@@ -22,19 +22,20 @@ class UserController extends Controller
         return view('forgot-password');
     }
 
-    public function update(Request $request)
+    public function update(Request $request, User $user)
     {
         // Validate the incoming request data
         $request->validate([
             'email' => 'required|email|max:255'
         ]);
 
+        dd($user);
         // Get the authenticated user
-        // $user = auth()->user();
+        $user = auth()->user();
         // print_r("validate successful");
         $user = User::where('email', $request->input('email'))->first();
-        dd($user);
-        print_r($user);
+        // dd($user);
+        // print_r($user);
 
         // Update user information
         $user->update([

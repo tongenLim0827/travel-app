@@ -57,4 +57,4 @@ Route::get('/frequently-asked-questions', function () { return view('faq'); });
 // profile
 Route::get('/user-profile', [UserController::class, 'create']);
 Route::delete('/delete-user/{user}', [UserController::class, 'destroy'])->name('delete-user');
-// Route::put('/update-user', [UserController::class, 'update'])->name('update-user');
+Route::put('/update-user/{user}', [UserController::class, 'update'])->name('update-user');

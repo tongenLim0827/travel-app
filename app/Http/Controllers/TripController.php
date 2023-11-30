@@ -73,7 +73,7 @@ class TripController extends Controller
         return redirect('/tracker');
     }
 
-    // NOT WORKING SIAAAAA
+    // WORKING TEMPORARILY
     public function edit(Trip $trip, Request $request)
     {
         // $request->validate([

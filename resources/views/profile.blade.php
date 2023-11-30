@@ -14,7 +14,7 @@
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" value="{{ auth()->user()->email }}">
             @error('email')
-                <p style="color: red; font-size: 12px;">{{  $message }}</p>
+                <p style="color: red; font-size: 12px;">{{ $message }}</p>
             @enderror
         </div>
         <br>
@@ -31,10 +31,12 @@
             <button type="submit" class="button">DELETE ACCOUNT</button>
         </form>
         <br>
-        {{-- <form method="POST" action="{{ route('update-user') }}">
+        <form method="PUT" action="{{ route('update-user', ['user' => auth()->user()]) }}">
+            @csrf
+            {{-- @method('put') --}}
             <button type="submit" class="button">UPDATE ACCOUNT</button>
-        </form> --}}
-        {{-- <br> --}}
+        </form>
+        <br>
         <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button type="submit" class="button">Log Out</button>
