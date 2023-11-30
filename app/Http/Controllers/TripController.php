@@ -76,11 +76,11 @@ class TripController extends Controller
     // NOT WORKING SIAAAAA
     public function edit(Trip $trip, Request $request)
     {
-        $request->validate([
-            'name'=>'required|max:255',
-            'description'=>'nullable',
-            'people'=>'nullable'
-        ]);
+        // $request->validate([
+        //     'name'=>'required|max:255',
+        //     'description'=>'nullable',
+        //     'people'=>'nullable'
+        // ]);
 
         $data = $request->only(['name', 'description', 'people']);
 

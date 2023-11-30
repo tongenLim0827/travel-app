@@ -31,18 +31,20 @@ class ExpenseController extends Controller
 
     public function view(Request $request, $trip, $expense)
     {
-        // dd($expense);
         $expense = Expense::find($expense);
-        // dd($expense);
         return view('expense-details', ['trip' => $trip, 'expense' => $expense]);
     }
 
-    public function delete($trip, $expense, )
+    public function delete($trip, $expense)
     {
         $findExpenses = Expense::find($expense);
         $findExpenses->delete();
-
         return redirect("/tracker/{$trip}/details");
+    }
+
+    public function edit($trip, $expense)
+    {
+        //
     }
 
 }

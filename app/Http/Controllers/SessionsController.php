@@ -12,7 +12,7 @@ class SessionsController extends Controller
     {
         return view('login');
     }
-    
+
     public function store(Request $request)
     {
         $credentials = $request->only('email', 'password');
