@@ -63,6 +63,7 @@
             </table>
 
         </div>
+        <p style="font-size:24px;">Total Expenses: ${{ $trip->totalExpenses() }}</p>
         <div style="text-align: right; margin-top: 50px;">
             <a href="{{ route('expense.create', ['trip' => $trip])}}">
                 <button type="button" class="add-expense-button">Add New Expenses</button>

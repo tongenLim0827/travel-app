@@ -28,4 +28,9 @@ class Trip extends Model
         return $this->hasMany(Expense::class);
     }
 
+    public function totalExpenses()
+    {
+        return $this->expenses->sum('amount');
+    }
+
 }
