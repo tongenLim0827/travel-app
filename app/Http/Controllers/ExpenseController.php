@@ -29,9 +29,12 @@ class ExpenseController extends Controller
         return redirect("/tracker/{$trip}/details");
     }
 
-    public function view(Request $request, $trip)
+    public function view(Request $request, $trip, $expense)
     {
-        return view('expense-details');
+        // dd($expense);
+        $expense = Expense::find($expense);
+        // dd($expense);
+        return view('expense-details', ['trip' => $trip, 'expense' => $expense]);
     }
 
     public function delete($trip, $expense, )

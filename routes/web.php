@@ -44,8 +44,8 @@ Route::delete('/tracker/{trip}/delete', [TripController::class, 'delete'])->name
 Route::put('/tracker/{trip}/details', [TripController::class, 'edit'])->name('tracker.edit'); //edit trip details >> not working :(
 Route::get('/tracker/trip/{trip}/create-expenses', [ExpenseController::class, 'create'])->name('expense.create');
 Route::post('/tracker/trip/{trip}/create-expenses', [ExpenseController::class, 'store'])->name('expense.store');
-Route::post('/tracker/trip/{trip}/edit-expenses/{expense}', [ExpenseController::class, 'edit'])->name('expense.edit');
-Route::post('/tracker/trip/{trip}/expenses/{expense}', [ExpenseController::class, 'edit'])->name('expense.view');
+Route::put('/tracker/trip/{trip}/edit-expenses/{expense}', [ExpenseController::class, 'edit'])->name('expense.edit'); //edit expenses details
+Route::get('/tracker/trip/{trip}/expenses/{expense}', [ExpenseController::class, 'view'])->name('expense.view');
 Route::delete('/tracker/{trip}/expenses/{expense}/delete', [ExpenseController::class, 'delete'])->name('expense.delete');
 
 // transfer

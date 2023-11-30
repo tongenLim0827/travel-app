@@ -3,9 +3,9 @@
 @section('content')
 
     <div class="account-details">
-        <a class="btn btn-primary" href="/tracker/{trip}/details">Back</a>
-        <h1 style="text-align: center; text-xl font-semibold text-gray-900 dark:text-white"> New Expenses </h1>
-        <form method="POST" action='{{  route('expense.edit', ['trip' => $trip]) }}'>
+        <a class="btn btn-primary" href="/tracker/{{$trip}}/details">Back</a>
+        <h1 style="text-align: center; text-xl font-semibold text-gray-900 dark:text-white"> {{ $expense->name }} </h1>
+        <form method="POST" action='{{  route('expense.edit', ['expense' => $expense, 'trip' => $trip]) }}'>
             @csrf
             @method('PUT')
             <input type="hidden" name="trip_id" value="{{ $trip }}">
@@ -31,7 +31,7 @@
             <br>
             <div class="form-group flex">
                 <label for="description">Description:</label>
-                <input type="text" id="description" name="description" value="{{ $expense->Description }}">
+                <input type="text" id="description" name="description" value="{{ $expense -> description }}">
             </div>
             <br>
             <div class="form-group">
