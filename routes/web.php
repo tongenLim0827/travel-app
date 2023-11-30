@@ -46,7 +46,7 @@ Route::get('/tracker/trip/{trip}/create-expenses', [ExpenseController::class, 'c
 Route::post('/tracker/trip/{trip}/create-expenses', [ExpenseController::class, 'store'])->name('expense.store');
 Route::post('/tracker/trip/{trip}/edit-expenses/{expense}', [ExpenseController::class, 'edit'])->name('expense.edit');
 Route::post('/tracker/trip/{trip}/expenses/{expense}', [ExpenseController::class, 'edit'])->name('expense.view');
-Route::delete('/tracker/{trip}/details', [TripController::class, 'delete'])->name('expense.delete');
+Route::delete('/tracker/{trip}/expenses/{expense}/delete', [ExpenseController::class, 'delete'])->name('expense.delete');
 
 // transfer
 Route::get('/transfer', function () { return view('transfer');});

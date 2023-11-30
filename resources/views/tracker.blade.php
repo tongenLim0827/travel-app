@@ -49,16 +49,10 @@
                             <td>{{ $trip->description }}</td>
                             <td>{{ $trip->people }}</td>
                             <td>
-                                <div style="display: flex; /* Add this to make child elements flex items */
-                                justify-content: center; /* Center the items horizontally */
-                                flex-wrap: wrap;">
+                                <div style="display: flex; justify-content: center; flex-wrap: wrap;">
                                     <a href="{{ route('tracker.view', ['trip' => $trip] )}}" class="display-inline">
                                         <button type="button" class="view-button">View</button>
                                     </a>
-
-                                    {{-- <a href="{{ route('tracker.delete', ['trip' => $trip])}}">
-                                        <button type="button" class="delete-button">Delete</button>
-                                    </a> --}}
 
                                     <form method="POST" action="{{ route('tracker.delete', ['trip' => $trip]) }}">
                                         @csrf

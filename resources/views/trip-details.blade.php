@@ -26,7 +26,7 @@
     <div class="display-container">
         <h1 style="text-align: center;"><u>Expenses History</u></h1>
         <div>
-            <table class="table-form" style="width: 100%; table-layout: fixed; ">
+            <table class="table-form" style="width: 100%; table-layout: fixed;">
                 <thead>
                     <tr>
                         <th>Expenses Name</th>
@@ -48,14 +48,15 @@
                                     <a href="{{ route('expense.view', ['trip' => $trip, 'expense' => $expense] )}}" class="display-inline">
                                         <button type="button" class="view-button">View</button>
                                     </a>
-
-                                    <form method="POST" action="{{ route('tracker.delete', ['trip' => $trip]) }}">
+                                    <br>
+                                    <form method="POST" action="{{ route('expense.delete', ['trip' => $trip, 'expense' => $expense]) }}">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="delete-button">Delete</button>
                                     </form>
                                 </div>
                             </td>
+                            <br>
                         </tr>
                     @endforeach
                 </tbody>
