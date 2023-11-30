@@ -36,7 +36,7 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody style="text-align: center;">
                     @foreach($expenses as $expense)
                         <tr>
                             <td>{{ $expense->name }}</td>
@@ -63,7 +63,19 @@
             </table>
 
         </div>
-        <p style="font-size:24px;">Total Expenses: ${{ $trip->totalExpenses() }}</p>
+        <p style="font-size:24px;">Total Expenses: {{ $trip->totalExpenses() }}
+            <select id="currency" name="currency" style="width: 80px; height: 30px; font-size: 16px">
+                <option value="default"> </option>
+                <option value="MYR">MYR</option>
+                <option value="AUD">AUD</option>
+                <option value="HKD">HKD</option>
+                <option value="USD">USD</option>
+                <option value="JPY">JPY</option>
+                <option value="EUR">EUR</option>
+                <option value="NZD">NZD</option>
+                <option value="SGD">SGD</option>
+            </select>
+        </p>
         <div style="text-align: right; margin-top: 50px;">
             <a href="{{ route('expense.create', ['trip' => $trip])}}">
                 <button type="button" class="add-expense-button">Add New Expenses</button>

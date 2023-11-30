@@ -3,7 +3,7 @@
 @section('content')
     <div class="cards-container">
         <div class="wrapper">
-            <h1> Frequently Asked Questions </h1>
+            <h1 style="font-size: 60px;"> Frequently Asked Questions </h1>
 
             <!-- FAQ 1 -->
             <div class="centre-card">

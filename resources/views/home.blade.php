@@ -35,8 +35,11 @@
                     <br>
                     <button type="submit" class="login-button">LOG IN</button>
                 </form>
-                <a href="/forgot-password" style="margin-left: 150px; margin-top: 40px;"> Forgot Password? </a>
-                <a href="/register" style="margin-left: 150px; margin-top: 40px;"> Create Account </a>
+                <div style="justify-content: center; margin-left: 150px;">
+                    <a href="/forgot-password"> Forgot Password? </a>
+                    <br>
+                    <a href="/register"> Create Account </a>
+                </div>
             @endauth
         </div>
     <!-- Intro Section End -->
@@ -101,7 +104,7 @@
 
     <!-- User review section -->
     <div class="wrapper">
-        <h1> Reviews by our user </h1>
+        <h1> Reviews by our user.... </h1>
 
         <!-- Review 1 -->
         <div class="centre-card">
