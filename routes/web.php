@@ -58,6 +58,7 @@ Route::get('/transfer', function () { return view('transfer');});
 Route::get('/frequently-asked-questions', function () { return view('faq'); });
 
 // profile
-Route::get('/user-profile', [UserController::class, 'create']);
+// Route::get('/user-profile/{user}', [UserController::class, 'create']);
+Route::get('/user-profile/{user}', [UserController::class, 'create'])->name('user-profile');
 Route::delete('/delete-user/{user}', [UserController::class, 'destroy'])->name('delete-user');
 Route::put('/update-user/{user}', [UserController::class, 'update'])->name('update-user');  //edit user details

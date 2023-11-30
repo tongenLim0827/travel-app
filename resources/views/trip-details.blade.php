@@ -26,7 +26,7 @@
     <div class="display-container">
         <h1 style="text-align: center;"><u>Expenses History</u></h1>
         <div>
-            <table class="table-form" style="width: 100%; table-layout: fixed;">
+            <table class="table-form" style="width: 1000px; table-layout: fixed;">
                 <thead>
                     <tr>
                         <th>Expenses Name</th>

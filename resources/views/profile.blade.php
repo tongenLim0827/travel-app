@@ -5,18 +5,27 @@
     <div class="account-details">
         <h1 style="text-align: center; text-xl font-semibold text-gray-900 dark:text-white"> User Profile </h1>
         @csrf
-        <div class="form-group flex" >
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" value="{{ auth()->user()->name }}">
-        </div>
         <br>
-        <div class="form-group flex">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" value="{{ auth()->user()->email }}">
-            @error('email')
-                <p style="color: red; font-size: 12px;">{{ $message }}</p>
-            @enderror
-        </div>
+        <form method="POST" action="{{ route('update-user', ['user' => $user]) }}">
+            @csrf
+            @method('put')
+            <div class="form-group flex" >
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="{{ $user->name }}">
+            </div>
+            <br>
+            <div class="form-group flex">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="{{ $user->email }}">
+                @error('email')
+                    <p style="color: red; font-size: 12px;">{{ $message }}</p>
+                @enderror
+            </div>
+            <br>
+            {{-- <input type="hidden" id="name" name="name" value="{{ auth()->user()->name }}"> --}}
+            {{-- <input type="hidden" id="email" name="email" value="{{ auth()->user()->email }}"> --}}
+            <button type="submit" class="button">UPDATE ACCOUNT</button>
+        </form>
         <br>
         {{-- <div class="form-group flex">
             <label for="password">Password:</label>
@@ -29,12 +38,6 @@
             @csrf
             @method('DELETE')
             <button type="submit" class="button">DELETE ACCOUNT</button>
-        </form>
-        <br>
-        <form method="PUT" action="{{ route('update-user', ['user' => auth()->user()]) }}">
-            @csrf
-            {{-- @method('put') --}}
-            <button type="submit" class="button">UPDATE ACCOUNT</button>
         </form>
         <br>
         <form method="POST" action="{{ route('logout') }}">

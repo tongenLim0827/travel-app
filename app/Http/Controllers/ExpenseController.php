@@ -42,9 +42,15 @@ class ExpenseController extends Controller
         return redirect("/tracker/{$trip}/details");
     }
 
-    public function edit($trip, $expense)
+    public function edit(Request $request, $trip, $expense)
     {
-        //
+        $data = $request->only(['name', 'category', 'description', 'amount']);
+
+        $findExpenses = Expense::find($expense);
+        // update trip details
+        $findExpenses->update($data);
+
+        return redirect("/tracker/{$trip}/details");
     }
 
 }

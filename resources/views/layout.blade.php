@@ -20,9 +20,12 @@
     <a class="element" href="/frequently-asked-questions">FAQ</a>
 
     @auth
-        <a class="element" href="/user-profile">Profile</a>
+        {{-- <a class="element" href="/user-profile">Profile</a> --}}
+        <a class="element" href="{{ route('user-profile', ['user'=> auth()->user()]) }}">Profile</a>
+
     @else
         <a class="element" href="/login">Profile</a>
+        {{-- <a class="element" href="{{ route('user-profile', ['user'=>$user]) }}">Profile</a> --}}
     @endauth
 
 </div>

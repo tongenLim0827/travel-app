@@ -17,9 +17,9 @@ class UserController extends Controller
     /**
      * Load user profile blade
      */
-    public function create()
+    public function create(User $user)
     {
-        return view('profile');
+        return view('profile', ['user' => $user]);
     }
 
     /**
@@ -99,21 +99,20 @@ class UserController extends Controller
     {
         // Validate the incoming request data
         $request->validate([
+            'name' => 'required',
             'email' => 'required|email|max:255'
         ]);
 
-        dd($user);
+        // dd($request->input('email'));
         // Get the authenticated user
-        $user = auth()->user();
-        $user = User::where('email', $request->input('email'))->first();
+        // $user = auth()->user();
+        // $user = User::where('email', $request->input('email'))->first();
 
         // Update user information
         $user->update([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
-            'password' => $request->input('password')
         ]);
-
         return redirect('/')->with('success', 'Profile updated successfully.');
     }
 

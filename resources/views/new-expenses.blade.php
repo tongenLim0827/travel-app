@@ -15,19 +15,17 @@
             <br>
             <div class="form-group flex">
                 <label for="category">Category:</label>
-                {{-- <label for="fruit">Select a fruit:</label> --}}
                     <select id="category" name="category" style="width: 80%; height: 30px; font-size: 16px">
                         <option value="default"> </option>
-                        <option value="accommodation">Accommodation</option>
-                        <option value="transport">Transport</option>
-                        <option value="food">Food</option>
-                        <option value="beverage">Beverage</option>
-                        <option value="entertainment">Entertainment</option>
-                        <option value="others">Others</option>
-                        <option value="beverage">Beverage</option>
-                        <option value="data">Data Plan</option>
+                        <option value="Accommodation">Accommodation</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Food">Food</option>
+                        <option value="Beverage">Beverage</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Others">Others</option>
+                        <option value="Beverage">Beverage</option>
+                        <option value="Data Plan">Data Plan</option>
                     </select>
-                {{-- <input type="text" id="category" name="category" required> --}}
             </div>
             <br>
             <div class="form-group flex">
