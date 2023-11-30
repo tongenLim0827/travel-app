@@ -16,7 +16,6 @@ class UserController extends Controller
         return view('profile');
     }
 
-
     public function forgot()
     {
         return view('forgot-password');
@@ -32,31 +31,15 @@ class UserController extends Controller
         dd($user);
         // Get the authenticated user
         $user = auth()->user();
-        // print_r("validate successful");
         $user = User::where('email', $request->input('email'))->first();
-        // dd($user);
-        // print_r($user);
 
         // Update user information
         $user->update([
+            'name' => $request->input('name'),
             'email' => $request->input('email'),
             'password' => $request->input('password')
         ]);
 
-        // Find the user by email
-        // $user = User::where('email', $request->input('email'))->first();
-        // // If the given email exists, then reset user password
-        // if ($user) {
-        //     $user->password = Hash::make($request->input('password'));
-        //     $user->save();
-
-        //     return redirect('/');
-        // }
-        // else {
-        //     return redirect('/guide')
-        //     ->withErrors(['email' => 'User with this email address not found.'])
-        //     ->withInput();
-        // }
         return redirect('/')->with('success', 'Profile updated successfully.');
     }
 
@@ -66,8 +49,9 @@ class UserController extends Controller
         return redirect('/');
     }
 
-    public function reset()
+    public function reset(Request $request)
     {
-        //
+        $user = auth()->user();
+        
     }
 }

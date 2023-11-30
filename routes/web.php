@@ -26,7 +26,7 @@ Route::post('/register', [RegisterController::class, 'store'])->middleware('gues
 
 // reset password (TO-DO)
 Route::get('/reset-password', [UserController::class, 'forgot'])->name('reset-password');
-Route::put('/reset-password', [UserController::class, 'update'])->middleware('admin')->name('reset-password');
+Route::put('/reset-password', [UserController::class, 'reset'])->middleware('admin')->name('reset-password');
 
 // login, logout
 Route::get('/login', [SessionsController::class, 'create'])->middleware('guest')->name('login');
@@ -36,7 +36,7 @@ Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth
 // guide
 Route::get('/guide', function () {return view('guide');});
 
-// tracker (TO-DO)
+// tracker
 Route::get('/tracker', [TripController::class, 'create'])->name('tracker.create');
 Route::post('/tracker', [TripController::class, 'store'])->name('tracker.store');
 Route::get('/tracker/{trip}/details', [TripController::class, 'view'])->name('tracker.view');
@@ -57,4 +57,4 @@ Route::get('/frequently-asked-questions', function () { return view('faq'); });
 // profile
 Route::get('/user-profile', [UserController::class, 'create']);
 Route::delete('/delete-user/{user}', [UserController::class, 'destroy'])->name('delete-user');
-Route::put('/update-user/{user}', [UserController::class, 'update'])->name('update-user');
+Route::put('/update-user/{user}', [UserController::class, 'update'])->name('update-user');  //edit user details
