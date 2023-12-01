@@ -10,6 +10,9 @@
             <div class="form-group flex">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
+                @error('email')
+                    <p style="color: red; font-size: 12px; margin: auto;">{{  $message }}</p>
+                @enderror
             </div>
             <br>
             <div class="form-group flex">
