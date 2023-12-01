@@ -42,7 +42,8 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                
+                <tbody style="text-align: center;">
                     @foreach($trips as $trip)
                         <tr>
                             <td>{{ $trip->name }}</td>

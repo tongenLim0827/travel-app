@@ -23,7 +23,6 @@
                         <option value="Beverage">Beverage</option>
                         <option value="Entertainment">Entertainment</option>
                         <option value="Others">Others</option>
-                        <option value="Beverage">Beverage</option>
                         <option value="Data Plan">Data Plan</option>
                     </select>
             </div>

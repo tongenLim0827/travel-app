@@ -23,10 +23,10 @@
         </form>
     </div>
     <br>
-    <div class="display-container">
+    <div class="display-container" >
         <h1 style="text-align: center;"><u>Expenses History</u></h1>
         <div>
-            <table class="table-form" style="width: 1000px; table-layout: fixed;">
+            <table class="table-form" style="width: 1000px; table-layout: fixed; ">
                 <thead>
                     <tr>
                         <th>Expenses Name</th>
@@ -40,7 +40,41 @@
                     @foreach($expenses as $expense)
                         <tr>
                             <td>{{ $expense->name }}</td>
-                            <td>{{ $expense->category }}</td>
+                            {{-- <td>{{ $expense->category }}</td> --}}
+                            <td
+                                @switch($expense->category)
+                                    @case('Food')
+                                        style="color: green">{{ $expense->category }}
+                                        @break
+
+                                    @case('Accommodation')
+                                        style="color: blue">{{ $expense->category }}
+                                        @break
+
+                                    @case('Transport')
+                                        style="color: orange">{{ $expense->category }}
+                                        @break
+
+                                    @case('Beverage')
+                                        style="color: red">{{ $expense->category }}
+                                        @break
+
+                                    @case('Entertainment')
+                                        style="color: purple">{{ $expense->category }}
+                                        @break
+
+                                    @case('Others')
+                                        style="color: yellow">{{ $expense->category }}
+                                        @break
+
+                                    @case('Data Plan')
+                                        style="color: brown">{{ $expense->category }}
+                                        @break
+
+                                    @default
+                                        style="color: black">{{ $expense->category }}
+                                @endswitch
+                            </td>
                             <td>{{ $expense->description }}</td>
                             <td>{{ $expense->amount }}</td>
                             <td>
